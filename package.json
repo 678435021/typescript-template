@@ -1,0 +1,68 @@
+{
+	"name": "<name>",
+	"description": "<dec>",
+	"version": "0.1.0",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/<org>/<repo>/issues"
+	},
+	"keywords": [
+		"nodejs",
+		"javascript"
+	],
+	"engines": {
+		"node": ">=16.0.0"
+	},
+	"author": {
+		"name": "Joe.C"
+	},
+	"type": "commonjs",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/<org>/<repo>.git"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"bin": {
+		"mc-term": "./dist/index.js"
+	},
+	"scripts": {
+		"build": "tsc && pkg . --compress Brotli && node ./scripts/build",
+		"pkg": "tsc; pkg . --compress Brotli"
+	},
+	"pkg": {
+		"scripts": [
+			"node_modules/axios/dist/node/axios.cjs",
+			"node_modules/vm2/lib/setup-sandbox.js",
+			"dist/builtin_plugins/*"
+		],
+		"assets": [],
+		"targets": [
+			"node18-win-x64"
+		],
+		"outputPath": "builds",
+		"compress": "Brotli"
+	},
+	"main": "./dist/index.js",
+	"dependencies": {
+
+	},
+	"devDependencies": {
+		"eslint-config-standard-with-typescript": "^34.0.0",
+		"@typescript-eslint/eslint-plugin": "^5.51.0",
+		"@typescript-eslint/parser": "^5.51.0",
+		"eslint-config-standard": "^17.0.0",
+		"eslint-plugin-promise": "^6.1.1",
+		"eslint-plugin-import": "^2.27.5",
+		"types-package-json": "^2.0.39",
+		"eslint-plugin-n": "^15.6.1",
+		"typed-emitter": "^2.1.0",
+		"@angablue/exe": "^1.2.0",
+		"@types/node": "^18.13.0",
+		"typescript": "^4.9.5",
+		"resedit": "^1.7.0",
+		"eslint": "^8.33.0",
+		"pkg": "^5.8.0"
+	}
+}
